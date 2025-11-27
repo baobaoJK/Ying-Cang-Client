@@ -1,0 +1,86 @@
+@use '../variable.scss' as *;
+
+#dashboard {
+  width: calc(100vw - pxTorem(128 + 332px));
+  background-color: white;
+  border-radius: pxTorem(8px);
+  box-shadow: 0px 0px pxTorem(10px) rgba(0, 0, 0, 0.1);
+  padding: pxTorem(32px) pxTorem(64px);
+  box-sizing: border-box;
+}
+
+.data-panel {
+  margin-top: pxTorem(16px);
+  margin-bottom: pxTorem(48px);
+
+  .data-card {
+    .icon {
+      @include icon-style(
+        (
+          bg-color: #30b88a,
+          icon-url: '/images/icon/pic.svg',
+          size: 48px,
+          margin-right: 16px,
+        )
+      );
+
+      &.today {
+        background-color: #5f84b3;
+      }
+
+      &.month {
+        background-color: #d64b46;
+      }
+
+      &.album {
+        @include icon-style(
+          (
+            bg-color: #ebb43d,
+            icon-url: '/images/icon/picture-album.svg',
+            size: 48px,
+            margin-right: 16px,
+          )
+        );
+      }
+    }
+  }
+
+  .data-card :deep(.el-card__body) {
+    display: flex;
+  }
+}
+
+.space-data-block {
+  margin-bottom: pxTorem(48px);
+  .data-card {
+    margin-bottom: pxTorem(16px);
+
+    .icon {
+      @include icon-style(
+        (
+          bg-color: #525252,
+          icon-url: '/images/icon/disk.svg',
+          size: 48px,
+          margin-right: 16px,
+        )
+      );
+    }
+  }
+
+  .data-card :deep(.el-card__body) {
+    display: flex;
+  }
+}
+
+.upload-line-panel {
+  height: pxTorem(300px);
+  margin-bottom: pxTorem(48px);
+}
+
+.software-info {
+  .software-info-box {
+    .text {
+      margin-bottom: pxTorem(16px);
+    }
+  }
+}

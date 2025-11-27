@@ -1,0 +1,35 @@
+@use '../variable.scss' as *;
+
+#install {
+  background-color: #eff1f3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.install-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: pxTorem(32px);
+  width: pxTorem(560px);
+  height: pxTorem(700px);
+  box-sizing: border-box;
+  background-color: #ffffff;
+  border-radius: pxTorem(10px);
+
+  img {
+    width: pxTorem(64px);
+    height: pxTorem(64px);
+  }
+
+  h3 {
+    letter-spacing: pxTorem(4px);
+  }
+
+  .submit-button {
+    width: 100%;
+  }
+}

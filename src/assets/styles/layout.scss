@@ -1,0 +1,125 @@
+@use '@/assets/styles/variable.scss' as *;
+
+#layout {
+  @extend %fullview;
+}
+
+.container {
+  background-color: #f8f7fa;
+}
+
+.side {
+  width: 260px;
+  //   box-shadow: 0px 0px 20px 0px rgba(0, 128, 255, 0.5);
+  box-shadow: 0 0 8px 0px #0080ff80;
+  z-index: 10;
+
+  .title {
+    width: 100%;
+    height: 70px;
+    box-sizing: border-box;
+    background-image: url('/public/images/logo.svg');
+    background-size: 80%;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+
+  .menu {
+    border-right: none;
+  }
+
+  &:deep(.el-menu-item.is-active) {
+    color: white;
+  }
+
+  &:deep(.el-menu-item.is-active::before) {
+    background-color: #2c99ff;
+  }
+}
+
+.main {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 0 100px;
+  padding-top: 90px;
+
+  &::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 360px;
+    width: calc(100% - 460px);
+    height: 76px;
+
+    backdrop-filter: saturate(200%) blur(5px);
+    background: linear-gradient(
+      180deg,
+      rgba(248, 247, 250, 70%) 44%,
+      rgba(248, 247, 250, 43%) 73%,
+      rgba(248, 247, 250, 0%)
+    );
+
+    z-index: 500;
+  }
+
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 20px;
+    width: calc(100% - 460px);
+    height: 56px;
+    background-color: white;
+    box-shadow: 0px 0px pxTorem(10px) rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    padding: 0 pxTorem(64px);
+    border-radius: pxTorem(8px);
+    z-index: 520;
+
+    .page-title {
+      letter-spacing: pxTorem(1px);
+      color: #6f6f6f;
+    }
+
+    .options {
+      display: flex;
+      align-items: center;
+      .user {
+        position: relative;
+        display: flex;
+        align-items: center;
+        margin-right: pxTorem(32px);
+        cursor: pointer;
+        transition: all 0.3s;
+
+        &::before {
+          content: '';
+          position: absolute;
+          top: pxTorem(5px);
+          left: 0;
+          width: 100%;
+          height: pxTorem(30px);
+          border-radius: pxTorem(24px);
+          background-color: rgb(247, 247, 247);
+          z-index: -1;
+        }
+
+        // before hover
+        &:hover {
+          opacity: 0.8;
+        }
+
+        .avatar {
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+        }
+        .username {
+          padding: 0 pxTorem(24px) 0 pxTorem(20px);
+        }
+      }
+    }
+  }
+}

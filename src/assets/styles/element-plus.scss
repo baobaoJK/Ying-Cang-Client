@@ -1,0 +1,52 @@
+%item {
+  &::before {
+    content: '';
+    position: absolute;
+    left: 10px;
+    width: calc(100% - 20px);
+    height: calc(100% - 16px);
+    background-color: #f3f4f6;
+    border-radius: 4px;
+  }
+  span {
+    z-index: 1;
+  }
+}
+
+.el-button {
+  span {
+    margin: 0 !important;
+  }
+}
+
+.el-menu-item {
+  &:hover {
+    background-color: transparent !important;
+
+    @extend %item;
+  }
+  &.is-active {
+    @extend %item;
+  }
+}
+
+.el-dropdown-menu {
+  .delete {
+    color: #ff4141;
+  }
+}
+
+/* 自定义 el-form-item 样式 */
+.custom-form-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.custom-form-item .el-form-item__label {
+  margin-bottom: 0px; /* 调整 label 和 content 之间的间距 */
+}
+
+.custom-form-item .el-form-item__content {
+  margin-bottom: 0px;
+}

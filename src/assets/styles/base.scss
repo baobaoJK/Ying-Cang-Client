@@ -1,0 +1,43 @@
+@use './variable.scss' as *;
+
+html,
+body,
+#app {
+  @extend %fullview;
+}
+
+* {
+  outline: none;
+  font-weight: 400;
+}
+
+a {
+  text-decoration: none;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  -moz-user-select: none; /*火狐*/
+  -webkit-user-select: none; /*webkit浏览器*/
+  -ms-user-select: none; /*IE10*/
+  -khtml-user-select: none; /*早期浏览器*/
+  user-select: none;
+  touch-action: none;
+}
+
+// 选项框样式
+.drag-select__area {
+  background-color: rgba(255, 255, 255, 0.15) !important;
+  border: pxTorem(2px) solid $mainColor;
+  border-radius: pxTorem(4px);
+}
